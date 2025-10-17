@@ -12,7 +12,6 @@ import {
 import VerificationRequests from "../components/VerificationRequests";
 import {
   areaAssignments,
-  mallsBrands,
   monthlyContractsData,
   quarterlyContractsData,
   staffPerformance,
