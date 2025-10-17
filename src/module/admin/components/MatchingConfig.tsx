@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
+import { SliderRange, SliderThumb, SliderTrack } from "@radix-ui/react-slider";
 const criteria = [
   { key: "location", label: "Vị trí" },
   { key: "brandPopularity", label: "Độ nổi tiếng Brand" },
@@ -36,7 +37,7 @@ export default function MatchingConfigShadcn() {
               <span>{weights[c.key].toFixed(2)}</span>
             </div>
             <Slider
-              value={weights[c.key]}
+              value={[weights[c.key as keyof typeof weights]]}
               max={1}
               step={0.01}
               onValueChange={(val: number[]) => handleChange(c.key, val[0])}
