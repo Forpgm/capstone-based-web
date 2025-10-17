@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { SliderRange, SliderThumb, SliderTrack } from "@radix-ui/react-slider";
-const criteria = [
+type WeightKey = "location" | "brandPopularity" | "mallTraffic" | "rentalCost";
+const criteria: { key: WeightKey; label: string }[] = [
   { key: "location", label: "Vị trí" },
   { key: "brandPopularity", label: "Độ nổi tiếng Brand" },
   { key: "mallTraffic", label: "Lưu lượng Mall" },
   { key: "rentalCost", label: "Giá thuê" },
 ];
-
 export default function MatchingConfigShadcn() {
   const [weights, setWeights] = useState({
     location: 0.4,
