@@ -1,5 +1,4 @@
 import { mallsBrands } from "@/utils/data";
-import React from "react";
 
 export default function ClientManagement() {
   return (
