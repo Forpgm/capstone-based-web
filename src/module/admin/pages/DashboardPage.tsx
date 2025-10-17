@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MapPin, TrendingUp, UserCog } from "lucide-react";
 import {
   LineChart,
@@ -13,7 +13,6 @@ import VerificationRequests from "../components/VerificationRequests";
 import {
   areaAssignments,
   mallsBrands,
-  matchingData,
   monthlyContractsData,
   quarterlyContractsData,
   staffPerformance,

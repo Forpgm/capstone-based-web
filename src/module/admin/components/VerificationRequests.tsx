@@ -1,5 +1,5 @@
 import { CheckCircle, MoreVertical, Search, XCircle } from "lucide-react";
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { pendingVerifications } from "../../../utils/data";
 
 export default function VerificationRequests() {
@@ -26,7 +26,7 @@ export default function VerificationRequests() {
     currentPage * itemsPerPage
   );
 
-  const goToPage = (page) => setCurrentPage(page);
+  const goToPage = (page: number) => setCurrentPage(page);
   const handlePrev = () => setCurrentPage((p) => Math.max(p - 1, 1));
   const handleNext = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
 
