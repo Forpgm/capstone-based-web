@@ -89,6 +89,7 @@ export const pendingVerifications = [
     location: "District 1, HCMC",
     date: "2025-10-12",
     staff: "Nguyen Van A",
+    status: "Pending",
   },
   {
     id: 2,
@@ -97,6 +98,7 @@ export const pendingVerifications = [
     location: "District 3, HCMC",
     date: "2025-10-13",
     staff: "Tran Thi B",
+    status: "Pending",
   },
   {
     id: 3,
@@ -105,14 +107,16 @@ export const pendingVerifications = [
     location: "District 7, HCMC",
     date: "2025-10-14",
     staff: "Le Van C",
+    status: "Approved",
   },
   {
     id: 4,
     name: "The Coffee House",
     type: "Brand",
     location: "District 5, HCMC",
-    date: "2025-10-15",
     staff: null,
+    date: "2025-10-15",
+    status: "Rejected",
   },
 ];
 
