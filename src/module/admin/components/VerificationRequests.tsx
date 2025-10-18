@@ -1,4 +1,4 @@
-import { MoreVertical, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import { useState, useMemo } from "react";
 import { pendingVerifications } from "../../../utils/data";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -155,16 +155,14 @@ export default function VerificationRequests() {
         <table className="w-full">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              {["Name", "Type", "Location", "Date", "Status", "Actions"].map(
-                (col) => (
-                  <th
-                    key={col}
-                    className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                  >
-                    {col}
-                  </th>
-                )
-              )}
+              {["Tên", "Loại", "Địa điểm", "Ngày", "Trạng thái"].map((col) => (
+                <th
+                  key={col}
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
+                >
+                  {col}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -200,18 +198,12 @@ export default function VerificationRequests() {
                           : "bg-red-100 text-red-700"
                     }`}
                   >
-                    {item.status}
+                    {item.status === "Pending"
+                      ? "Đang chờ"
+                      : item.status === "Approved"
+                        ? "Đã duyệt"
+                        : "Bị từ chối"}
                   </span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex space-x-2">
-                    <button
-                      onClick={() => setModalItem(item)}
-                      className="text-gray-600 hover:text-gray-700"
-                    >
-                      <MoreVertical className="w-5 h-5" />
-                    </button>
-                  </div>
                 </td>
               </tr>
             ))}

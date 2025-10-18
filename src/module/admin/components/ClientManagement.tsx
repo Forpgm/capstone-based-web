@@ -6,7 +6,7 @@ export default function ClientManagement() {
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-900">
-            Malls & Brands Management
+            Quản lý Malls & Brands
           </h2>
           <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
             + Add New
