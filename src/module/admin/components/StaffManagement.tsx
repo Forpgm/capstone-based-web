@@ -1,5 +1,4 @@
 import { staffPerformance } from "@/utils/data";
-import React from "react";
 
 export default function StaffManagement() {
   return (
