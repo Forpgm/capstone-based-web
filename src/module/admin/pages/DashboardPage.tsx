@@ -42,13 +42,12 @@ export default function DashboardPage() {
           </div>
         ))}
       </div>
-
       {/* Tabs */}
       <div className="mb-6 border-b border-gray-200">
         <div className="flex space-x-8">
           {[
             "overview",
-            "verifications",
+            // "verifications",
             "staff",
             "clients",
             "areas",
@@ -65,7 +64,7 @@ export default function DashboardPage() {
               }`}
             >
               {tab === "overview" && "Tổng quan"}
-              {tab === "verifications" && "Yêu cầu xác thực"}
+              {/* {tab === "verifications" && "Yêu cầu xác thực"} */}
               {tab === "staff" && "Nhân viên"}
               {tab === "clients" && "TTTM & Thương hiệu"}
               {tab === "areas" && "Phân công khu vực"}
@@ -75,7 +74,6 @@ export default function DashboardPage() {
           ))}
         </div>
       </div>
-
       {activeTab === "overview" && (
         <div className="space-y-6">
           {/* Charts Section */}
@@ -152,13 +150,9 @@ export default function DashboardPage() {
           </div>
         </div>
       )}
-
-      {activeTab === "verifications" && <VerificationRequests />}
-
+      {/* {activeTab === "verifications" && <VerificationRequests />} */}
       {activeTab === "staff" && <StaffManagement />}
-
       {activeTab === "clients" && <ClientManagement />}
-
       {activeTab === "areas" && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {areaAssignments.map((area, idx) => (
