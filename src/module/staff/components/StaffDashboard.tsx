@@ -1,38 +1,11 @@
 import { useState } from "react";
-import { Check, FileText, Home, Briefcase } from "lucide-react";
-import {
-  tasksData,
-  type Task,
-  type TaskStep,
-  type TaskStepStatus,
-} from "@/store/data";
+import { Check, Home, Briefcase } from "lucide-react";
 import TaskManagement from "./TaskManagement";
 
 export default function StaffDashboard() {
   const [activeTab, setActiveTab] = useState<"tasks" | "malls" | "rentals">(
     "tasks"
   );
-  const [tasks, setTasks] = useState<Task[]>(tasksData);
-  const [selectedTask, setSelectedTask] = useState<number | null>(null);
-
-  const handleUpdateStepStatus = (
-    taskId: number,
-    stepId: number,
-    newStatus: TaskStepStatus
-  ) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === taskId
-          ? {
-              ...task,
-              steps: task.steps.map((step: TaskStep) =>
-                step.id === stepId ? { ...step, status: newStatus } : step
-              ),
-            }
-          : task
-      )
-    );
-  };
 
   return (
     <div className="flex min-h-screen bg-gray-50">
