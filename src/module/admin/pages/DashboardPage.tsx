@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { MapPin, TrendingUp, UserCog } from "lucide-react";
-
-import VerificationRequests from "../components/VerificationRequests";
 import { areaAssignments, staffPerformance, stats } from "../../../utils/data";
 import MatchingConfig from "../components/MatchingConfig";
 import ClientManagement from "../components/ClientManagement";
