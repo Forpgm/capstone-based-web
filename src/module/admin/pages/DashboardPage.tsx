@@ -1,21 +1,43 @@
 import { useState } from "react";
 import { MapPin, TrendingUp, UserCog } from "lucide-react";
-import { areaAssignments, staffPerformance, stats } from "../../../utils/data";
+import { areaAssignments, staffPerformance, stats } from "../../../store/data";
 import MatchingConfig from "../components/MatchingConfig";
 import ClientManagement from "../components/ClientManagement";
 import DashboardOverview from "../components/DashboardOverview";
 import ContractManagement from "../components/ContractManagement";
 import StaffManagement from "../components/StaffManagement";
+import ProfileMenu from "../components/ProfileMenu";
+import StaffDashboard from "@/module/staff/components/StaffDashboard";
 
 export default function DashboardPage() {
+  const [isStaffView, setIsStaffView] = useState(false);
+
   const [activeTab, setActiveTab] = useState("overview");
+  if (isStaffView) {
+    return (
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Staff Dashboard</h1>
+          <ProfileMenu
+            onSwitchToStaff={() => setIsStaffView(false)} // quay lại Admin
+            isStaffView={isStaffView}
+          />
+        </div>
+        {/* Nội dung staff */}
+        <StaffDashboard />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          Admin Dashboard
-        </h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+        <ProfileMenu
+          onSwitchToStaff={() => setIsStaffView(true)}
+          isStaffView={isStaffView}
+        />
       </div>
 
       {/* Stats Cards */}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Plus, Eye, ChevronLeft, ChevronRight } from "lucide-react";
-import { contracts } from "@/utils/data";
+import { contracts } from "@/store/data";
 import { Button } from "@/components/ui/button";
 
 export default function ContractManagement() {

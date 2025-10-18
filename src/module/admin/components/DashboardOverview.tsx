@@ -1,4 +1,4 @@
-import { monthlyContractsData, quarterlyContractsData } from "@/utils/data";
+import { monthlyContractsData, quarterlyContractsData } from "@/store/data";
 import { useState } from "react";
 import {
   LineChart,

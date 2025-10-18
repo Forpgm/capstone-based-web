@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { staffPerformance } from "@/utils/data";
+import { staffPerformance } from "@/store/data";
 import { Eye } from "lucide-react";
 
 export default function StaffManagement() {

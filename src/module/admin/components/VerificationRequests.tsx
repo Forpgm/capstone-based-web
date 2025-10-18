@@ -1,6 +1,6 @@
 import { Search } from "lucide-react";
 import { useState, useMemo } from "react";
-import { pendingVerifications } from "../../../utils/data";
+import { pendingVerifications } from "../../../store/data";
 import * as Dialog from "@radix-ui/react-dialog";
 
 export default function VerificationRequests() {

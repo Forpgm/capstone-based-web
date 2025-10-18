@@ -1,4 +1,4 @@
-import { mallsBrands } from "@/utils/data";
+import { mallsBrands } from "@/store/data";
 
 export default function ClientManagement() {
   return (

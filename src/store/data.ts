@@ -681,3 +681,215 @@ export const staffPerformance: Staff[] = [
     month: "2025-10",
   },
 ];
+export type TaskStepStatus = "pending" | "inProgress" | "done";
+
+export interface TaskStep {
+  id: number;
+  title: string; // ví dụ: "Verify onboarding documents"
+  description?: string; // chi tiết bước
+  status: TaskStepStatus;
+  documents?: string[]; // nếu step có document cần check
+  tenantRequests?: string[]; // nếu step có yêu cầu tìm khách thuê
+}
+
+export interface Task {
+  id: number;
+  mallName: string;
+  location: string;
+  manager: string;
+  assignedTo: string; // staff phụ trách
+  steps: TaskStep[]; // các step của task
+}
+export const tasksData: Task[] = [
+  {
+    id: 1,
+    mallName: "Mall A",
+    location: "123 Street, District 1, HCM",
+    manager: "Manager A",
+    assignedTo: "staff1",
+    steps: [
+      {
+        id: 1,
+        title: "Onboarding review",
+        status: "done",
+        documents: [
+          "Business License.pdf",
+          "Floor Plan.pdf",
+          "Mall Info Form.pdf",
+        ],
+        description:
+          "Kiểm tra đầy đủ giấy tờ khởi tạo (onboarding) và xác minh thông tin mall.",
+      },
+      {
+        id: 2,
+        title: "On-site verification",
+        status: "inProgress",
+        description:
+          "Đến thực địa để kiểm tra hiện trạng, đối chiếu sơ đồ và xác nhận thông tin với ban quản lý mall.",
+      },
+      {
+        id: 3,
+        title: "Update mall info",
+        status: "pending",
+        description:
+          "Nếu có sai sót hoặc thông tin thiếu, tiến hành cập nhật lại dữ liệu mall trên hệ thống.",
+      },
+      {
+        id: 4,
+        title: "Lease & brand assignment",
+        status: "pending",
+        tenantRequests: ["Need 3 shops for Brand X", "1 shop for Brand Y"],
+        description:
+          "Hoàn thiện hợp đồng thuê và phân bổ gian hàng cho các brand quan tâm.",
+      },
+    ],
+  },
+  {
+    id: 2,
+    mallName: "Mall B",
+    location: "456 Avenue, Thu Duc City, HCM",
+    manager: "Manager B",
+    assignedTo: "staff2",
+    steps: [
+      {
+        id: 1,
+        title: "Onboarding review",
+        status: "done",
+        documents: ["Business License.pdf", "Floor Plan.pdf"],
+        description: "Đã xác nhận đầy đủ giấy phép và bản vẽ mặt bằng.",
+      },
+      {
+        id: 2,
+        title: "On-site verification",
+        status: "done",
+        description:
+          "Đã hoàn tất kiểm tra thực địa và xác nhận đúng vị trí, layout.",
+      },
+      {
+        id: 3,
+        title: "Update mall info",
+        status: "inProgress",
+        description:
+          "Đang chỉnh sửa thông tin một số khu vực gian hàng chưa khớp.",
+      },
+      {
+        id: 4,
+        title: "Lease & brand assignment",
+        status: "pending",
+        tenantRequests: ["Need 2 shops for Brand Z"],
+        description: "Đang chuẩn bị ký hợp đồng với Brand Z, dự kiến tuần tới.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    mallName: "Mall C",
+    location: "789 Boulevard, District 7, HCM",
+    manager: "Manager C",
+    assignedTo: "staff3",
+    steps: [
+      {
+        id: 1,
+        title: "Onboarding review",
+        status: "done",
+        documents: ["Business License.pdf"],
+        description: "Giấy phép hợp lệ, đang chờ sơ đồ mặt bằng bổ sung.",
+      },
+      {
+        id: 2,
+        title: "On-site verification",
+        status: "pending",
+        description:
+          "Chưa tiến hành kiểm tra thực địa, dự kiến trong tuần này.",
+      },
+      {
+        id: 3,
+        title: "Update mall info",
+        status: "pending",
+        description: "Chưa có cập nhật thông tin.",
+      },
+      {
+        id: 4,
+        title: "Lease & brand assignment",
+        status: "pending",
+        tenantRequests: [],
+        description: "Chưa đến giai đoạn tìm brand thuê.",
+      },
+    ],
+  },
+  {
+    id: 4,
+    mallName: "Mall D",
+    location: "12 Nguyen Hue, District 1, HCM",
+    manager: "Manager D",
+    assignedTo: "staff4",
+    steps: [
+      {
+        id: 1,
+        title: "Onboarding review",
+        status: "done",
+        documents: ["Business License.pdf", "Mall Info Form.pdf"],
+        description: "Hoàn tất bước onboarding.",
+      },
+      {
+        id: 2,
+        title: "On-site verification",
+        status: "done",
+        description: "Đã thực địa và kiểm tra thực tế.",
+      },
+      {
+        id: 3,
+        title: "Update mall info",
+        status: "done",
+        description: "Đã cập nhật thông tin đầy đủ trên hệ thống.",
+      },
+      {
+        id: 4,
+        title: "Lease & brand assignment",
+        status: "inProgress",
+        tenantRequests: ["Brand T - 5 kiosks", "Brand U - 2 stores"],
+        description:
+          "Đang thương lượng hợp đồng giữa mall và các brand tiềm năng.",
+      },
+    ],
+  },
+  {
+    id: 5,
+    mallName: "Mall E",
+    location: "55 Tran Hung Dao, District 5, HCM",
+    manager: "Manager E",
+    assignedTo: "staff5",
+    steps: [
+      {
+        id: 1,
+        title: "Onboarding review",
+        status: "done",
+        documents: ["Business License.pdf", "Mall Info Form.pdf"],
+        description: "Đã kiểm duyệt hồ sơ khởi tạo thành công.",
+      },
+      {
+        id: 2,
+        title: "On-site verification",
+        status: "done",
+        description: "Đã hoàn tất thực địa, không có sai lệch thông tin.",
+      },
+      {
+        id: 3,
+        title: "Update mall info",
+        status: "done",
+        description: "Không cần chỉnh sửa thêm.",
+      },
+      {
+        id: 4,
+        title: "Lease & brand assignment",
+        status: "done",
+        tenantRequests: [
+          "Brand A - 2 units signed",
+          "Brand B - 1 pending confirmation",
+        ],
+        description:
+          "Đã ký hợp đồng với Brand A, Brand B đang chờ xác nhận cuối.",
+      },
+    ],
+  },
+];
